@@ -29,7 +29,12 @@ if (found.numberInCart <= 0) {
 }
 return
 }
-
+function removeItemFromCart(product:MyProduct):void{
+    const newCart = cart.filter((item)=> item.id !== product.id)
+    cart = newCart
+    forceRender()
+    return   
+}
 export function useCart(){
     const [,setListener] = useState({})
     listeners.push(()=>setListener({}))
@@ -37,7 +42,8 @@ export function useCart(){
     return {
         cart:cart,
         addToCart,
-        removeIncrementFromCart
+        removeIncrementFromCart,
+        removeItemFromCart
     }
 }
 
