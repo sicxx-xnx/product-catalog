@@ -9,6 +9,7 @@ export function productfactory (obj:any):MyProduct{
         price:obj.price,
         numberInCart:0,
         favorite: Math.random() > .5,
-        image:obj.images[0]
+        image:obj.images[0],
+        catagory:obj.category
     }
 }

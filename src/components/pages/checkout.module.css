@@ -1,3 +1,42 @@
+.checkoutPage{
+background-color: lightgray;
+display: flex;
+gap: 5rem;
+}
+.checkoutBox{
+    background-color: white;
+    width: 20rem;
+    margin-top: 5rem;
+    border: 1px solid white;
+    margin-bottom: 5rem;
+}
+.checkoutsubbox{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: lightgray .5rem solid;
+}
+.checkoutBox button{
+    width: 100%;
+    padding: .8rem;
+    background-color: red;
+    color: white;
+
+}
+.quanity{
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.checkoutBox button:hover{
+    background-color: darkred;
+}
 .cartGrid{
     display: grid;
     grid-template-columns: repeat(4,auto);

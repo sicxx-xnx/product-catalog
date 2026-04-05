@@ -1,0 +1,13 @@
+.mainBody{
+    display: flex;
+    gap: 1rem;
+}
+.filtercont{
+flex-grow: 1;
+border: 1px solid lightblue;
+}
+
+.optionselectorcont{
+display: flex;
+flex-direction: column;
+}
