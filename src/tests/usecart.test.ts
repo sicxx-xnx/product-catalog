@@ -9,14 +9,18 @@ const products:MyProduct[] = [
         id:1,
         description:"this is a test",
         numberInCart:0,
-        price:25
+        price:25,
+        favorite:false,
+        image:"none"
     },
     {
         name:"test2",
         id:2,
         description:"this is a test",
         numberInCart:0,
-        price:24 
+        price:24, 
+        favorite:false,
+        image:"none"
     }
 ]
 beforeEach(()=>{

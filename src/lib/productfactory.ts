@@ -3,10 +3,12 @@ import type { MyProduct } from "../types/producttype";
 export function productfactory (obj:any):MyProduct{
 
     return {
-        name:obj.name,
-        id:obj.product_id,
+        name:obj.title,
+        id:obj.id,
         description:obj.description,
         price:obj.price,
-        numberInCart:0
+        numberInCart:0,
+        favorite: Math.random() > .5,
+        image:obj.images[0]
     }
 }

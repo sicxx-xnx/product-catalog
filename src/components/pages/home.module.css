@@ -1,0 +1,33 @@
+.heroImageCont{
+    max-width: 100%;
+    position: relative;
+}
+.heroImageCont img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;   
+}
+.overlay{
+    position: absolute;
+    color: white;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+}
+.overlayCallouts{
+    display: flex;
+    justify-content: space-around;
+}
+.overlayText h2{
+    font-size: 2rem;
+}
+.favoritHolder{
+    margin-top: -32rem;
+    z-index: 25;
+    position: relative;
+}
+.favoritTitle{
+    color: white;
+    font-size: 2rem;
+}

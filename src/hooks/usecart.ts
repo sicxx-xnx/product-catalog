@@ -2,17 +2,23 @@ import { useState } from "react";
 import type {MyProduct} from "../types/producttype"
 let cart:MyProduct[] = []
 let listeners:any = []
+function showCartTotal():number{
+const cartTotal = cart.reduce<number>((acc,cartitem):number=>{
+    return acc = acc+cartitem.numberInCart
+},0)   
+return cartTotal 
+}
 function forceRender():void{
 listeners.forEach((l:()=>{}):{}=>l())
 }
-function addToCart(product:MyProduct):void{
+function addToCart(product:MyProduct,quanity:number = 1):void{
 const found = cart.find((item)=>item.id===product.id)
 if (found) {
-    found.numberInCart++
+    found.numberInCart = found.numberInCart + quanity
     forceRender()
     return
 }
-cart = [...cart,{...product,numberInCart:1}]
+cart = [...cart,{...product,numberInCart:quanity}]
 forceRender()
 }
 function removeIncrementFromCart(product:MyProduct):void{
@@ -43,7 +49,8 @@ export function useCart(){
         cart:cart,
         addToCart,
         removeIncrementFromCart,
-        removeItemFromCart
+        removeItemFromCart,
+        showCartTotal
     }
 }
 

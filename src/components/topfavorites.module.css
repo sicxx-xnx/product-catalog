@@ -1,0 +1,100 @@
+:root{
+    --primary-card-backcollor: rgb(251, 248, 248) ;
+    --card-background-color-odd: rgb(213, 213, 213);
+
+}
+
+.prodcutCardRow{
+display: flex;
+justify-content: end;
+padding: 0.8rem;
+margin: 1rem;
+}
+.productCardHolder.animateEntrace{
+    animation: animateentranceright normal 800ms ;
+    animation-fill-mode: forwards;
+
+}
+.prodcutCardRow:nth-child(odd){
+    justify-content: start;
+    background-color: var(--primary-card-backcollor);
+}
+.animateEntraceRight{
+    animation: animateentranceright normal 800ms ;
+}
+.animateEntraceLeft{
+    animation: animateentranceleft normal 800ms ;
+
+}
+@keyframes animateentranceright {
+    from{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
+@keyframes animateentranceleft {
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+    
+}
+.productCardHolder{
+    max-width: 350px;
+    background-color: var(--primary-card-backcollor);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 2px solid lightcyan;
+    padding: 1rem;
+    opacity: 0;
+
+}
+
+.imageCont{
+position: relative;
+}
+
+.productCardHolder img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.imageOverlay{
+position: absolute;
+background: rgba(0, 0, 0, 0.445);
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 2rem;
+color: white;
+opacity: 0;
+transition: opacity 3ms;
+inset: 0;
+}
+.productCardHolder:hover .imageOverlay{
+opacity: 1;
+}
+/* img {
+max-width: 350px;
+} */
+ .actionHolder{
+    display: flex;
+    flex-direction: column;
+    
+ }
+ .actionHolder div{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+ }
+
+input[type=number]{
+    max-width: 2.5rem;
+}

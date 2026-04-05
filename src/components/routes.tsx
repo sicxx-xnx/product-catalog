@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import {apiFetch} from '../lib/apirequest'
 import { productfactory } from "../lib/productfactory";
 import type { MyProduct } from "../types/producttype";
+import { Cart } from "./pages/checkout";
 
 
 
@@ -14,12 +15,12 @@ useEffect(()=>
 {
   async function runApiCall (){
     try {
-      const apiresult = await apiFetch("https://fake-store-api.mock.beeceptor.com/api/products")
-   
-      const newProduct =  apiresult.map((product:any) => {
-        return productfactory(product)
-        
+      const apiresult = await apiFetch("https://dummyjson.com/products")   
+      console.log(apiresult)
+      const newProduct =  apiresult.products.map((product:any) => {
+        return productfactory(product) 
       });
+      console.log(newProduct)
       setProducts(()=> newProduct)
 }   catch (error) {
       console.log(error)
@@ -39,10 +40,10 @@ const router = createBrowserRouter([
 //     path: "Products",
 //     element: <ProductPage/>,
 //   },
-//   {
-//     path:"cart",
-//     element:<Cart/>
-//   }
+  {
+    path:"cart",
+    element:<Cart/>
+  }
 ]);
 
 return (

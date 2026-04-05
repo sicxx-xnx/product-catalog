@@ -4,7 +4,7 @@ import styles from "./header.module.css"
 
 
 export function Header(){
-    const {cart} = useCart()
+    const {cart,showCartTotal} = useCart()
     return (
         <div className={styles.headerCont}>
             <div className={styles.titleCont}>
@@ -20,12 +20,15 @@ export function Header(){
                 <img 
                     src="/cart.svg" 
                     className={styles.cartIcon} 
-                    alt="picture of the cart"/>
+                    alt="picture of the cart"
+                    aria-label="cart image"/>
                 <div
                     className={styles.cartTotalNumberCont}
                 >
-                    <p className={styles.cartTotalNumber}>
-                        {cart.length>0?cart.length:null}
+                    <p data-testid="cart-total" className={styles.cartTotalNumber}
+                                            
+                    >
+                        {cart.length>0?showCartTotal():null}
                     </p>
                 </div>
             </Link>    
