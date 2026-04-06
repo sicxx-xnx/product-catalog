@@ -5,9 +5,9 @@ import {apiFetch} from '../lib/apirequest'
 import { productfactory } from "../lib/productfactory";
 import type { MyProduct } from "../types/producttype";
 import { Cart } from "./pages/checkout";
-import { ProductCardHolder, ProductPage } from "./pages/productpage";
+import { ProductPage } from "./pages/productpage";
 
-
+// updateing the file to get a new commit
 
 
 export function Routes(){
