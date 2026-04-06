@@ -31,3 +31,18 @@
     color: white;
     font-size: 2rem;
 }
+
+@media (max-width: 600px) {
+    .overlay{
+        margin-top: 1rem;
+    }
+    .favoritHolder{
+        margin-top: unset
+    }
+    ul{
+        all:unset
+    }
+    .favoritTitle{
+        color: black;
+    }
+}

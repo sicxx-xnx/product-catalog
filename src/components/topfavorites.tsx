@@ -20,7 +20,7 @@ return (
         <div ref={ref} className={`${style.productCardHolder} ${inView?style.animateEntrace:null}`}>
             <div>
                 <div className={style.imageCont}>
-                    <img src='https://cdn.pixabay.com/photo/2015/10/24/11/09/drop-1004250_1280.jpg' alt={input.description}/>
+                    <img src={input.image} alt={input.description}/>
                     <div className={style.imageOverlay}>{input.name}</div>
                 </div>
                 <div className="">

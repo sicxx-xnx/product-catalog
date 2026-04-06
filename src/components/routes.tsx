@@ -5,7 +5,8 @@ import {apiFetch} from '../lib/apirequest'
 import { productfactory } from "../lib/productfactory";
 import type { MyProduct } from "../types/producttype";
 import { Cart } from "./pages/checkout";
-import { ProductPage } from "./pages/productpage";
+import { ProductCardHolder, ProductPage } from "./pages/productpage";
+
 
 
 
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "Products",
     element: <ProductPage product={products}/>,
+  },
+  {
+    path: "products/:cata",
+    element:<ProductPage product={products}/>
   },
   {
     path:"cart",

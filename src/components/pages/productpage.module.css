@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+
 .mainBody{
     display: flex;
     gap: 1rem;
@@ -10,4 +14,26 @@ border: 1px solid lightblue;
 .optionselectorcont{
 display: flex;
 flex-direction: column;
+}
+.prodcutGrid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: auto;
+    gap: 2rem;
+}
+.productcard{
+min-height: 300px;    
+border-bottom-right-radius: 20px 40px;   
+display: flex;
+flex-direction: column;
+padding: 2rem;
+border: 1px solid black;
+text-align: center;
+}
+.productcard img{
+width: 175px;
+height: auto;    
+}
+.productcard{
+
 }

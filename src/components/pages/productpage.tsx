@@ -3,7 +3,8 @@ import { useCart } from "../../hooks/usecart";
 import type { MyProduct } from "../../types/producttype";
 import { Header } from "../header";
 import style from "./productpage.module.css"
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
+
 function makecatagoryobj (obj:MyProduct[]):string[]{
     const catagorylist:string[] = [] 
     obj.forEach((item)=>{
@@ -14,6 +15,41 @@ function makecatagoryobj (obj:MyProduct[]):string[]{
     })
     return catagorylist
 
+}
+
+export function ProductCardHolder({products}:{products:MyProduct[]}){
+    const {addToCart} = useCart()
+    const {cata} = useParams()
+    let filterprodcuts:MyProduct[];
+
+    if (cata) {
+     filterprodcuts = products.filter((input)=>
+        input.catagory === cata
+    )    
+    if(cata === "not set"){
+    filterprodcuts = products   
+
+    }
+    } else {
+     filterprodcuts = products   
+    }
+   
+    const productcards = filterprodcuts.map((input)=>{
+        return (
+            <>
+            <div className={style.productcard}>
+                <img src={input.image} alt={input.name}  />
+                <h2>{input.name}</h2>
+                <p>{input.description}</p>
+                <p>{input.price}</p>
+                <button onClick={()=>{addToCart(input)}}>Add To Cart</button>
+            </div>
+            </>
+        )
+    })
+return (
+    <>{productcards}</>
+)
 }
 
 
@@ -48,8 +84,8 @@ export function ProductPage({product}:{product:MyProduct[]}){
             <Header/>
             <div className={style.mainBody}>
                 <Filter products={product}/>
-                <div style={{width:"60%"}}>
-
+                <div className={style.prodcutGrid} style={{width:"70%"}}>
+                    <ProductCardHolder products={product}/>
                 </div>
             </div>
 </>
