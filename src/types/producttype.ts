@@ -3,5 +3,8 @@ export type MyProduct = {
     name:string,
     description:string,
     price:number,
-    numberInCart:number
+    numberInCart:number,
+    favorite:boolean,
+    image:string
+    catagory:string
 }
