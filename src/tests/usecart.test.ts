@@ -11,7 +11,8 @@ const products:MyProduct[] = [
         numberInCart:0,
         price:25,
         favorite:false,
-        image:"none"
+        image:"none",
+        catagory:'',
     },
     {
         name:"test2",
@@ -20,7 +21,8 @@ const products:MyProduct[] = [
         numberInCart:0,
         price:24, 
         favorite:false,
-        image:"none"
+        image:"none",
+        catagory:"",
     }
 ]
 beforeEach(()=>{
